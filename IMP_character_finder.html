@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IMP Character Finder</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+  <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #535653;
+      color: antiquewhite;
+      font-family: 'Courier New', monospace;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    div.img {
+      height: 300px;
+      margin-bottom: 2%;
+    }
+
+    .terminal-wrapper {
+      width: 100%;
+      max-width: 640px;
+      background: #B53441;
+      border: 1px solid #2a2030;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .terminal-bar {
+      background: #FF1C35;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      color: aliceblue;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .dot-black {
+      background: black;
+    }
+
+    .dot-red {
+      background: #380E08;
+    }
+
+    .dot-white {
+      background: #E8E0D4;
+    }
+
+    py-terminal {
+      display: block;
+      padding: 1rem;
+      min-height: 260px;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="img">
+    <img src="./IMP_improved_logo_by_Luna_Ventus.png" alt="IMP improved logo by Luna_Ventus" style="height:100%; width:100%; object-fit:contain;">
+  </div>
+
+  <div class="terminal-wrapper">
+    <div class="terminal-bar">
+      <span class="dot dot-red"></span>
+      <span class="dot dot-white"></span>
+      <span class="dot dot-black"></span>
+      <span style="margin-left:0.5rem">IMP character finder</span>
+    </div>
+    <py-terminal>
+    </py-terminal>
+  </div>
+
+  <script type="py" terminal worker>
+print("Hello! I'm going to show my amazing powers of deduction.\nReady? Think of a member of IMP.")
+is_imp = input("Is your character an imp? (Reply y or n): ")
+is_female = input("Is your character female? (Reply y or n): ")
+if is_imp == "y":
+    is_known = input("Do you know your character's name? (Reply y or n): ")
+    if is_female == "y":
+        if is_known == "y":
+            print("Millie")
+        else:
+            print("What's her name, the intern")
+    elif is_known == "n":
+        print("What's his name, the intern")
+    elif input("Does he say 'crumbs' when he's upset? (Reply y or n): ") == "y":
+        print("Moxxie")
+    else:
+        print("The best boss ever")
+elif is_female == "y":
+    is_known = input("Do you know your character's name? (Reply y or n): ")
+    if is_known == "y":
+        print("Loona")
+    else:
+        print("What's her name, the succubus intern")
+elif input("Is he hellborn? (Reply y or n): ") == "y":
+    print("Stolas")
+else:
+    print("Goat")
+  </script>
+
+</body>
+
+</html>
